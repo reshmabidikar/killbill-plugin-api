@@ -17,5 +17,14 @@
 
 package org.killbill.billing.invoice.plugin.api;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import org.killbill.billing.currency.api.CurrencyConversionApi;
+import org.killbill.billing.invoice.api.Invoice;
+import org.killbill.billing.invoice.api.formatters.InvoiceFormatter;
+
 public interface InvoiceFormatterFactory {
+
+    public InvoiceFormatter createInvoiceFormatter(final String defaultLocale, final String catalogBundlePath, final Invoice invoice, final Locale locale, final CurrencyConversionApi currencyConversionApi, ResourceBundle bundle, ResourceBundle defaultBundle);
 }
